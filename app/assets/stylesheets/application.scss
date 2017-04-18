@@ -115,11 +115,53 @@
     padding: 50px 0;
     background-color: #f8f8f8;
 }
+.content-section-a div.kununu-tile {
+  background-image: url("tile_5_738b");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 100px 100px;
+  margin-top: 30px;
+}
+
+.content-section-a div.tile-1 {
+  background-image: url("tile_2_738b");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 100px 100px;
+  margin-top: 30px;
+}
+
+.content-section-a div.tile-2 {
+  background-image: url("tile_3_738b");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 100px 100px;
+  margin-top: 30px;
+}
+
+.content-section-a div.tile-3 {
+  background-image: url("tile_4_738b");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 100px 100px;
+  margin-top: 30px;
+}
 
 .content-section-b {
     padding: 50px 0;
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
+    text-align: center;
+    color: #ecf0f1;
+}
+
+.content-section-b img {
+  height: 100px;
+  margin-top: 50px;
 }
 
 .section-heading-spacer {
@@ -138,9 +180,11 @@
 }
 Contact GitHub API Training Shop Blog About
 
+
 //---------Footer---------
 
 footer {
+    height: 500px;
     color: #bdc3c7;
 }
 
@@ -149,13 +193,6 @@ footer .footer-below {
     background-color: #212121;
     color: #bdc3c7;
 }
-
-html{height:100%;}
-body{min-height:100%;margin:0;padding:0;position:relative;}
-
-header{background-color: #ffe4c4;}
-main{padding-bottom:100px;background-color: #bdb76b;}/* main的padding-bottom值要等于或大于footer的height值 */
-footer{position:absolute;bottom:0;width:100%;height:100px;background-color: #ffc0cb;}
 
 //---------table---------
 .custab{
@@ -195,6 +232,23 @@ body{
   display:block;
   padding-top: 20px;
 }
+
+.auth a:link {color:#212121;}		/* 未被访问的链接 */
+.auth a:visited {color:#212121;}	/* 已被访问的链接 */
+.auth a:hover {color:#ecf0f1;}	/* 鼠标指针移动到链接上 */
+.auth a:active {color:#2980b9;}
+// .auth p{
+//   color: #ecf0f1;
+// }
+
+.auth span{
+  color: #ecf0f1;
+}
+
+// .auth i{
+//   color: #212121;
+// }
+
 .auth .auth-box legend{
   color:#fff;
   border:none;

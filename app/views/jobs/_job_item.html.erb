@@ -5,30 +5,30 @@
     <div class="pull-right">
           <a class="btn btn-info btn-sm disabled" data-method="get" href="/jobs/20/resumes/new">Has Applied</a>
     </div>
-    <p><a href="/jobs/20">fghdfsb</a></p>
+    <p><%= link_to(job.title, job_path(job)) %></p>
 
 
     <div class="row">
       <div class="col-md-6">
-        <p>Salary: 100 ~ 100 </p>
+        <span><i class="fa fa-credit-card" aria-hidden="true"></i> <%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %> </span>
       </div>
       <div class="col-md-6">
-        <p><i class="fa fa-address-card-o" aria-hidden="true"></i>  developer</p>
+        <span><i class="fa fa-briefcase" aria-hidden="true"></i>  developer</span>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-3 col-sm-6">
-        <span><i class="fa fa-user-circle-o" aria-hidden="true"></i>  dbsdbv</span>
+        <span><i class="fa fa-building" aria-hidden="true"></i>  company</span>
       </div>
       <div class="col-md-3 col-sm-6">
-        <span><i class="fa fa-location-arrow" aria-hidden="true"></i>  sdvds</span>
+        <span><i class="fa fa-map-marker" aria-hidden="true"></i>  city</span>
       </div>
       <div class="col-md-3 col-sm-6">
-        <span><i class="fa fa-clock-o" aria-hidden="true"></i>  6 days ago</span>
+        <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(job.created_at) %></span>
       </div>
       <div class="col-md-3 col-sm-6">
-        <span><i class="fa fa-envelope" aria-hidden="true"></i>  svbsd</span>
+        <span><i class="fa fa-envelope" aria-hidden="true"></i> <%= job.user.email %></span>
       </div>
     </div>
   </div>
