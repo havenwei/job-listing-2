@@ -18,48 +18,146 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Roboto);
 
-.jumbotron {
-  background-image:url('joblisting-header');
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: 110px;
+
+//---------Navbar---------
+
+.navbar-default {
+    background-color: #212121;
+    border-color: #212121;
+    margin-bottom: 0;
+    border-radius: 0;
 }
 
-.title {
-  font-family: "Helvetica Neue", "Microsoft Yahei", 微软雅黑;
-  text-align: center;
-  margin-top: 200px;
-  margin-bottom: 80px;
+.navbar-default .navbar-brand {
+    color: #bdc3c7;
+    padding: 10px 15px;
+    line-height: 30px;
 }
 
-.slogan {
-  margin-top: 10px;
-  margin-bottom: 50px;
-  text-align: center;
-  color: white;
-  top: 12px;
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #ecf0f1;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #bdc3c7;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #FF6F00;
+    color: #ecf0f1;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #FF6F00;
+    color: #ecf0f1;
+    background-color: #FFE0B2;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+    background-color: black;
+    color: #ecf0f1;
+}
+
+//---------flashes----------
+.alert {margin: 0;}
+
+//---------Box---------
+
+.box {
+    background-image: url("joblisting-header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .box-inner {
+      background-color: rgba(0,0,0,1);
+      background: -webkit-linear-gradient(bottom,rgba(0,0,0,1),rgba(0,0,0,.4));
+      background: -moz-linear-gradient(bottom,rgba(0,0,0,1),rgba(0,0,0,.4));
+      padding: 10px;
+
+    }
+
+    h1.title  {
+        font-size: 36px;
+        text-align: center;
+        padding-top: 80px;
+        padding-bottom: 128px;
+        margin-top: 80px;
+        margin-bottom:128px;
+        color: white;
+        font-weight: 300;
+        letter-spacing: 9px;
+        text-transform: uppercase;
+        text-shadow: 3px 3px 2px black;
+    }
+
+    .slogan {
+        color: white;
+        margin: 0;
+        text-align: center;
+        font-size: 16px;
+        top: 12px;
+    }
+}
+
+//---------Content---------
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+
+.section-heading {
+    margin-bottom: 30px;
 }
 
 .lead {
-  margin-bottom: 60px;
-  text-align: center;
-  color: white;
+    font-size: 18px;
+    font-weight: 400;
+}
+Contact GitHub API Training Shop Blog About
+
+//---------Footer---------
+
+footer {
+    color: #bdc3c7;
 }
 
-.caption {
-  margin: 30px;
-  text-align: center;
-  top: 20px;
+footer .footer-below {
+    padding: 25px 0;
+    background-color: #212121;
+    color: #bdc3c7;
 }
 
-.thumbnail {
-    border: 0 none;
-    box-shadow: none;
-    margin-top: 60px;
-}
+html{height:100%;}
+body{min-height:100%;margin:0;padding:0;position:relative;}
 
+header{background-color: #ffe4c4;}
+main{padding-bottom:100px;background-color: #bdb76b;}/* main的padding-bottom值要等于或大于footer的height值 */
+footer{position:absolute;bottom:0;width:100%;height:100px;background-color: #ffc0cb;}
 
+//---------table---------
 .custab{
   border: 1px solid #ccc;
 
@@ -73,4 +171,285 @@
 .custab:hover{
   box-shadow: 3px 3px 0px transparent;
   transition: 0.5s;
+}
+
+//-----------auth-----------
+.margin-top-20{
+  margin-top: 20px;
+}
+body{
+  background:url('background.jpg');
+  background-size:100% 100%;
+  background-attachment: fixed;
+  background-repeat:no-repeat;
+  font-family: 'Open Sans', sans-serif;
+  padding-bottom: 40px;
+}
+.auth h1{
+  color:#fff!important;
+  font-weight:300;
+  font-family: 'Open Sans', sans-serif;
+}
+.auth h1 span{
+  font-size:21px;
+  display:block;
+  padding-top: 20px;
+}
+.auth .auth-box legend{
+  color:#fff;
+  border:none;
+  font-weight:300;
+  font-size:24px;
+}
+.auth .auth-box{
+  background-color:#fff;
+  // max-width:460px;
+  margin:0 auto;
+  border:1px solid rgba(255, 255, 255, 0.4);;
+  background-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  margin-top:10px;
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(50, 50, 50, 0.32);
+  -moz-box-shadow:    0px 0px 30px 0px rgba(50, 50, 50, 0.32);
+  box-shadow:         0px 0px 30px 0px rgba(50, 50, 50, 0.32);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: background 1s ease-in-out;
+  -moz-transition: background 1s ease-in-out;
+  -ms-transition: background 1s ease-in-out;
+  -o-transition: background 1s ease-in-out;
+  transition: background 1s ease-in-out;
+}
+@media(max-width:460px){
+  .auth .auth-box{
+   margin:0 10px;
+ }
+}
+
+.auth .auth-box input::-webkit-input-placeholder { /* WebKit browsers */
+  color:    #fff;
+  font-weight:300;
+}
+.auth .auth-box input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #fff;
+  font-weight:300;
+}
+.auth .auth-box input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #fff;
+  font-weight:300;
+}
+.auth .auth-box input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:    #fff;
+  font-weight:300;
+}
+.auth span.input-group-addon,
+.input-group-btn button{
+  border:none;
+  background: #fff!important;
+  color:#000!important;
+}
+.auth form{
+    font-weight:300!important;
+}
+.auth form input[type="text"],
+.auth form input[type="password"],
+.auth form input[type="email"],
+.auth form input[type="search"]{
+  border:none;
+  padding:10px 0 10px 0;
+  background-color: rgba(255, 255, 255, 0)!important;
+  background: rgba(255, 255, 255, 0);
+  color:#fff;
+  font-size:16px;
+  border-bottom:1px dotted #fff;
+  border-radius:0;
+  box-shadow:none!important;
+  height:auto;
+}
+.auth textarea{
+  background-color: rgba(255, 255, 255, 0)!important;
+  color:#fff!important;
+}
+.auth input[type="file"] {
+  color:#fff;
+}
+.auth form label{
+    color:#fff;
+    font-size:21px;
+    font-weight:300;
+}
+/*for radios & checkbox labels*/
+.auth .radio label,
+.auth label.radio-inline,
+.auth .checkbox label,
+.auth label.checkbox-inline{
+    font-size: 14px;
+}
+
+.auth form .help-block{
+    color:#fff;
+}
+.auth form select{
+  background-color: rgba(255, 255, 255, 0)!important;
+  background: rgba(255, 255, 255, 0);
+  color:#fff!important;
+  border-bottom:1px solid #fff!important;
+  border-radius:0;
+  box-shadow:none;
+}
+.auth form select option{
+    color:#000;
+}
+/*multiple select*/
+.auth select[multiple] option,
+.auth select[size] {
+  color:#fff!important;
+}
+
+/*Form buttons*/
+.auth form .btn{
+  background:none;
+  -webkit-transition: background 0.2s ease-in-out;
+  -moz-transition: background 0.2s ease-in-out;
+  -ms-transition: background 0.2s ease-in-out;
+  -o-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+}
+.auth form .btn-default{
+    color:#fff;
+    border-color:#fff;
+}
+.auth form .btn-default:hover{
+    background:rgba(225, 225, 225, 0.3);
+  color:#fff;
+  border-color:#fff;
+}
+.auth form .btn-primary:hover{
+    background:rgba(66, 139, 202, 0.3);
+}
+.auth form .btn-success:hover{
+    background:rgba(92, 184, 92, 0.3);
+}
+.auth form .btn-info :hover{
+    background:rgba(91, 192, 222, 0.3);
+}
+.auth form .btn-warning:hover{
+    background:rgba(240, 173, 78, 0.3);
+}
+.auth form .btn-danger:hover{
+    background:rgba(217, 83, 79, 0.3);
+}
+.auth form .btn-link{
+  border:none;
+  color:#fff;
+  padding-left:0;
+}
+.auth form .btn-link:hover{
+  background:none;
+}
+
+
+.auth label.label-floatlabel {
+  font-weight: 300;
+  font-size: 11px;
+  color:#fff;
+  left:0!important;
+  top: 1px!important;
+}
+
+
+/****** LOGIN MODAL ******/
+.loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-help{
+  font-size: 12px;
 }
