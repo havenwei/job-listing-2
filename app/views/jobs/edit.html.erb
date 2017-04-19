@@ -1,27 +1,13 @@
-<div class="col-md-10  col-md-offset-1">
-<div class="auth">
-    <h1 class="text-center">Welcom to WORK.LIFE <span>Find a better Work!</span> </h1>
+<div class="col-md-8  col-md-offset-2">
+  <div class="auth">
     <div id="big-form" class="well auth-box">
       <form>
         <fieldset>
-
-<h1> Edit a job </h1>
-
-<%= simple_form_for @job do |f| %>
-
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :wage_lower_bound, label: "薪资下限" %>
-<%= f.input :wage_upper_bound, label: "薪资上限" %>
-<%= f.input :contact_email %>
-<%= f.input :is_hidden %>
-
-  <%= f.submit "Submit" %>
-<% end %>
-
-</fieldset>
-</form>
-</div>
-<div class="clearfix"></div>
-</div>
+          <h1> Edit a Job </h1>
+          <hr>
+          <%= render "form" %>
+        </fieldset>
+      </form>
+    </div>
+  </div>
 </div>

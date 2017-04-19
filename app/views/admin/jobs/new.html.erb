@@ -1,25 +1,13 @@
 <div class="col-md-8  col-md-offset-2">
   <div class="auth">
-      <div id="big-form" class="well auth-box">
-        <form>
-          <fieldset>
-
-<h1> Add a Job </h1>
-
-<%= simple_form_for [:admin,@job] do |f| %>
-
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :wage_lower_bound, label: "Lower Salary" %>
-<%= f.input :wage_upper_bound, label: "Upper Salary" %>
-<%= f.input :contact_email %>
-<%= f.input :is_hidden %>
-
-  <%= f.submit "Submit", class: "btn btn-default"%>
-<% end %>
-
-</fieldset>
-</form>
-</div>
-</div>
+    <div id="big-form" class="well auth-box">
+      <form>
+        <fieldset>
+          <h1> Add a Job </h1>
+          <hr>
+          <%= render "form" %>
+        </fieldset>
+      </form>
+    </div>
+  </div>
 </div>
