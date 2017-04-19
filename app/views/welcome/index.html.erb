@@ -1,11 +1,11 @@
 <div class="col-md-12">
   <div class="row box">
-    <h1 class="title">Better Work, Better Life</h1>
+    <h1 class="title"><a href="/jobs">Better Work, Better Life</a></h1>
     <div class="box-inner ">
         <p class="slogan">
           Posting a job? WL can help you find better candidates, too.
            Find the most talented people faster with our proprietary tools.
-          <%= link_to("Start now", jobs_path) %>
+          <%= link_to("Start now", admin_jobs_path) %>
         </p>
     </a>
     </div>
@@ -13,18 +13,20 @@
 </div>
 
 <div class="content-section-b">
-  <div class="row">
-    <div class="col-xs-4"> <span class="animated-icon animated-icon-search"><%= image_tag 'animat-search' %></span>
-      <h3><span class="text-bold">30 thousand</span>&nbsp;<br class="visible-xs">
-        jobs</h3>
-    </div>
-    <div class="col-xs-4"> <span class="animated-icon animated-icon-post"><%= image_tag 'animat-sign-post' %></span>
-      <h3><span class="text-bold">10,000</span>&nbsp;<br class="visible-xs">
-        companies</h3>
-    </div>
-    <div class="col-xs-4"> <span class="animated-icon animated-icon-compass"><%= image_tag 'animat-compass' %></span>
-      <h3><span class="text-bold">1</span>&nbsp;awesome<br class="visible-xs">
-        you</h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4"> <span class="animated-icon animated-icon-search"><%= image_tag 'animat-search' %></span>
+        <h3><span class="text-bold">30 thousand</span>&nbsp;<br class="visible-xs">
+          jobs</h3>
+      </div>
+      <div class="col-xs-4"> <span class="animated-icon animated-icon-post"><%= image_tag 'animat-sign-post' %></span>
+        <h3><span class="text-bold">10,000</span>&nbsp;<br class="visible-xs">
+          companies</h3>
+      </div>
+      <div class="col-xs-4"> <span class="animated-icon animated-icon-compass"><%= image_tag 'animat-compass' %></span>
+        <h3><span class="text-bold">1</span>&nbsp;awesome<br class="visible-xs">
+          you</h3>
+      </div>
     </div>
   </div>
 </div>
@@ -57,14 +59,16 @@
           <div class="tile kununu-tile">
             <h3 class="text-center">Company Profiles & Reviews</h3>
             <p class="text-center">Get the inside scoop on employers before you apply. Check out WL's company profiles as well as employee reviews—powered by <span class="kununu-logo"></span>—to get a sense of culture, pay and benefits.</p>
-            <div class="btn-wrapper"> <a href="#" class="c-btn btn-ghost">See Profiles</a> </div>
+            <div class="btn-wrapper"><a href="#" class="btn btn-default">See Profiles</a></div>
+
           </div>
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6 tile-wrapper">
           <div class="tile tile-1">
             <h3 class="text-center">Career Advice</h3>
             <p class="text-center">WL has the expert advice you need for your job search and career—interview tips, networking icebreakers, salary negotiation strategies, our latest WL 100 list of companies hiring now and more.</p>
-            <div class="btn-wrapper"> <a href="#" class="c-btn btn-ghost">Get Advice</a> </div>
+            <div class="btn-wrapper"><a href="#" class="btn btn-default">Get Advice</a></div>
+
           </div>
         </div>
       </div>
@@ -73,14 +77,14 @@
           <div class="tile tile-2">
             <h3 class="text-center">Education Programs</h3>
             <p class="text-center">Need extra skills to make yourself more marketable? We can help you get the training you need to succeed. Check out our directory of online and local education and professional development programs.</p>
-            <div class="btn-wrapper"> <a href="#" class="c-btn btn-ghost">Learn More</a> </div>
+            <div class="btn-wrapper"><a href="#" class="btn btn-default">Learn More</a></div>
           </div>
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6 tile-wrapper">
           <div class="tile tile-3">
             <h3 class="text-center">Resume Help</h3>
             <p class="text-center">Upload your resume, and you'll have the opportunity for a free expert critique that will help make sure your value shines through. And for a fee, our pros will give that resume a full-on makeover.</p>
-            <div class="btn-wrapper"> <a href="#" class="c-btn btn-ghost">Get Resume Help</a> </div>
+            <div class="btn-wrapper"><a href="#" class="btn btn-default">Get Resume Help</a></div>
           </div>
         </div>
       </div>
@@ -95,18 +99,19 @@
       <div class="employers-tile">
         <h3 class="text-center">Employers: Let Us Help You Find the Best People</h3>
         <p class="text-center">WL has designed solutions that span social, mobile and the cloud to solve the challenges of casting the widest possible net and making the right connection with the right candidate, in the right context, at the right time. In other words, we can help you reach, connect with and hire the very best people.</p>
-        <a href="#" class="c-btn btn-ghost">Learn More</a> </div>
+        <div class="btn-wrapper"><a href="#" class="btn btn-default">Learn More</a></div>
     </div>
   </section>
 </div>
 
-<div class="content-section-a">
-
-    <section class="why-section">
-    <div class="container">
-      <h2 class="text-center">Become a Member!</h2>
-      <p class="text-center">We get it—looking for work is hard work. Let us make it easier for you. Sign up for WL, then upload your resume so recruiters can find you and so you can apply for jobs more quickly. Plus you can get job alerts and helpful job content delivered to your inbox. <em>What are you waiting for?</em></p>
-      <a href="https://login20.WL.com/Become-Member/Create-Account?intcid=skr_BAMCTA1_www_create-account" class="c-btn btn-primary">Create an Account</a>
+  <div class="col-md-12">
+    <div class="row box2">
+      <div class="box2-inner">
+        <h2 class="title">Become a Member!</h2>
+        <p class="slogan">We get it—looking for work is hard work. Let us make it easier for you. Sign up for WL, then upload your resume so recruiters can find you and so you can apply for jobs more quickly. Plus you can get job alerts and helpful job content delivered to your inbox. <em>What are you waiting for?</em></p>
+        <p class="lead">
+          <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#signup-modal">Create an Account</a>
+        </p>
+      </div>
     </div>
-    </section>
-</div>
+  </div>
