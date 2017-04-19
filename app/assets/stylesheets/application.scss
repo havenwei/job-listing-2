@@ -69,7 +69,10 @@
 }
 
 //---------flashes----------
-.alert {margin: 0;}
+.alert {
+  margin: 0;
+  border-radius: 0;
+}
 
 //---------btn-wrapper------
 .btn-wrapper a.btn{

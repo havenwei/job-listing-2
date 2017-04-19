@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :resumes
   has_many :jobs, dependent: :destroy
+  has_many :job_applieds
+  has_many :applied_jobs, through: :job_applieds, source: :job
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
