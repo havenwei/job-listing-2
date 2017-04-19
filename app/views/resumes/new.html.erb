@@ -1,7 +1,7 @@
 <div class="col-md-8  col-md-offset-2">
   <div class="auth">
     <div id="big-form" class="well auth-box">
-      <form>
+      <!-- <form> -->
         <fieldset>
           <h1 class="text-center">Applying Job<br /> <span>for <%= @job.title %></span> </h1>
 
@@ -12,11 +12,11 @@
             <%= f.input :attachment %>
 
             <%= f.submit "Submit", class: "btn btn-default"%>
+            <%= link_to("Cancel", jobs_path, class: "btn btn-default pull-right") %>
           <% end %>
-          <%= link_to("Cancel", jobs_path, class: "btn btn-default") %>
 
         </fieldset>
-      </form>
+      <!-- </form> -->
     </div>
   </div>
 </div>
