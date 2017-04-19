@@ -16,4 +16,12 @@ class User < ApplicationRecord
   def applied?(job)
     applied_jobs.include?(job)
   end
+
+  def applied!(job)
+    applied_jobs << job
+  end
+
+  def disapplied!(job)
+    applied_jobs.delete(job)
+  end
 end
