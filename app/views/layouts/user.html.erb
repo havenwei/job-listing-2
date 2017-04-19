@@ -28,12 +28,13 @@
               <div class="col-md-10">
                 <%= yield %>
               </div>
-            <% else %>
-              <%= yield %>
-            <% end %>
-           </div>
+            </div>
+          <% else %>
+            <%= yield %>
+          <% end %>
         </div>
 
+        <div class="push"></div>
         <%= render "common/footer" %>
 
     </body>

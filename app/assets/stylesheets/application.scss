@@ -282,6 +282,26 @@ footer .footer-below {
     color: #bdc3c7;
 }
 
+footer {
+    position: relative; //(此auto也可，其他不可)
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    color: #ffffff;
+    background-color: #4b5a61;
+}
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -5px; //（此-5px可根据页面实际情况进行调节）
+}
+
 //---------table---------
 .custab{
   border: 1px solid #ccc;
@@ -308,7 +328,7 @@ body{
   background-attachment: fixed;
   background-repeat:no-repeat;
   font-family: 'Open Sans', sans-serif;
-  padding-bottom: 40px;
+  // padding-bottom: 40px;
 }
 .auth h1{
   color:#fff!important;
@@ -325,17 +345,10 @@ body{
 .auth a:visited {color:#212121;}	/* 已被访问的链接 */
 .auth a:hover {color:#ecf0f1;}	/* 鼠标指针移动到链接上 */
 .auth a:active {color:#2980b9;}
-// .auth p{
-//   color: #ecf0f1;
-// }
 
 .auth span{
   color: #ecf0f1;
 }
-
-// .auth i{
-//   color: #212121;
-// }
 
 .auth .auth-box legend{
   color:#fff;

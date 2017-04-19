@@ -1,10 +1,22 @@
-<h3> 投交履历到 <%= @job.title %> </h3>
+<div class="col-md-8  col-md-offset-2">
+  <div class="auth">
+    <div id="big-form" class="well auth-box">
+      <form>
+        <fieldset>
+          <h1 class="text-center">Applying Job<br /> <span>for <%= @job.title %></span> </h1>
 
-<hr>
+          <hr>
 
-<%= simple_form_for [@job, @resume] do |f| %>
-  <%= f.input :content %>
-  <%= f.input :attachment %>
+          <%= simple_form_for [@job, @resume] do |f| %>
+            <%= f.input :content %>
+            <%= f.input :attachment %>
 
-  <%= f.submit "送出"%>
-<% end %>
+            <%= f.submit "Submit", class: "btn btn-default"%>
+          <% end %>
+          <%= link_to("Cancel", job_path(@job), class: "btn btn-default") %>
+
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
