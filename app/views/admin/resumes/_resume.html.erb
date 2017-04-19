@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<!-- <div class="panel panel-default">
     <div class="panel-heading">
         <div class="row">
             <div class="col-md-12">
@@ -24,4 +24,20 @@
         <% end %>
     </div>
 
+</div> -->
+
+<div id="big-form" class="well auth-box">
+  <form>
+    <fieldset>
+      <span><%= resume.user.email %></span>
+      <hr>
+      <p> <%= simple_format(resume.content) %> </p>
+      <% if resume.attachment.present? %>
+        <i class="fa fa-paperclip"> </i>
+        <%= link_to("Download Resume", resume.attachment_url) %>
+      <% else %>
+         No Attachment
+      <% end %>
+    </fieldset>
+  </form>
 </div>

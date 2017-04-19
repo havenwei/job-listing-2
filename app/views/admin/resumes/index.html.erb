@@ -1,4 +1,6 @@
-<h2> <%= @job.title %> - 履历列表 </h2>
-
-<hr>
-<%= render :partial => "resume", :collection => @resumes, :as => :resume %>
+<div class="col-md-10  col-md-offset-1">
+  <div class="auth">
+    <h1 class="text-center"><%= @job.title %> <span> Resumes</span></h1>
+      <%= render :partial => "resume", :collection => @resumes, :as => :resume %>
+  </div>
+</div>
