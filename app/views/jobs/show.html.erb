@@ -1,10 +1,10 @@
 <div class="col-md-10  col-md-offset-1">
   <div class="auth">
     <h1 class="text-center"><%= @job.title %><span>by company, Inc.</span> </h1>
-    <div id="big-form" class="well auth-box">
-      <form>
-        <fieldset>
-
+      <div id="big-form" class="well auth-box">
+        <form>
+          <fieldset>
+          <%= link_to("Back", jobs_path, class: "pull-right") %>
           <h3>Job Descriptioin:</h3>
 
           <p>
@@ -13,7 +13,11 @@
 
           <hr>
           <div class="text-center">
-            <%= link_to("Apply", new_job_resume_path(@job), class: "btn btn-default") %>
+            <% if !current_user || !current_user.applied?(@job) %>
+              <%= link_to("Apply", new_job_resume_path(@job), class: "btn btn-default") %>
+            <% else %>
+              <%= link_to("Has Applied", "#", class: "btn btn-danger") %>
+            <% end %>
           </div>
 
         </fieldset>

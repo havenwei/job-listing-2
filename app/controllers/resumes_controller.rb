@@ -3,7 +3,12 @@ class ResumesController < ApplicationController
 
   def new
     @job = Job.find(params[:job_id])
-    @resume = Resume.new
+    if !current_user.applied?(@job)
+      @resume = Resume.new
+    else
+      flash[:warning] = "You have applied this job!"
+      redirect_to root_path
+    end
   end
 
   def create
@@ -11,6 +16,7 @@ class ResumesController < ApplicationController
     @resume = Resume.new(resume_params)
     @resume.job = @job
     @resume.user = current_user
+    current_user.applied!(@job)
 
     if @resume.save
       flash[:notice] = "成功提交履历"
