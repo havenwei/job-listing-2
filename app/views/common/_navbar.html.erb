@@ -10,10 +10,10 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                   <% if !current_user %>
-                    <!-- <li><%= link_to("注册", new_user_registration_path) %></li>
-                    <li><%= link_to("登录", new_user_session_path) %></li> -->
-                    <li><a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Log in</a></li>
+                    <li><%= link_to("Sign Up", new_user_registration_path) %></li>
+                    <li><%= link_to("Log in", new_user_session_path) %></li>
+                    <!-- <li><a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Log in</a></li> -->
                   <% else %>
                     <li class="dropdown">
                       <a herf="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -36,7 +36,7 @@
     <!-- /.container-fluid -->
 </nav>
 
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<!-- <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog" role="document">
     <div class="loginmodal-container">
        <h2>Log in</h2>
@@ -71,4 +71,4 @@
       <% end %>
     </div>
   </div>
-</div>
+</div> -->
