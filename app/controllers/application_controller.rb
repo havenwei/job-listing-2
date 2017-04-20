@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
+  before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
+
 
   def require_is_admin
     if !current_user.admin?
@@ -7,4 +9,11 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:is_admin])
+  end
+
 end
