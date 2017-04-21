@@ -17,16 +17,16 @@
         <span><i class="fa fa-credit-card" aria-hidden="true"></i> <%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %> </span>
       </div>
       <div class="col-md-6">
-        <span><i class="fa fa-briefcase" aria-hidden="true"></i><%= job.category%></span>
+        <span><i class="fa fa-briefcase" aria-hidden="true"></i> <%= job.category%></span>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-3 col-sm-6">
-        <span><i class="fa fa-building" aria-hidden="true"></i><%= job.company%></span>
+        <span><i class="fa fa-building" aria-hidden="true"></i> <%= job.company%></span>
       </div>
       <div class="col-md-3 col-sm-6">
-        <span><i class="fa fa-map-marker" aria-hidden="true"></i><%= job.city %></span>
+        <span><i class="fa fa-map-marker" aria-hidden="true"></i> <%= job.city %></span>
       </div>
       <div class="col-md-3 col-sm-6">
         <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(job.created_at) %></span>
