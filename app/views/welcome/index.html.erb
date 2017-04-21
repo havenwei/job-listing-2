@@ -5,7 +5,11 @@
         <p class="slogan">
           Posting a job? WL can help you find better candidates, too.
            Find the most talented people faster with our proprietary tools.
-          <%= link_to("Start now", admin_jobs_path) %>
+          <% if current_user && current_user.admin? %>
+            <%= link_to("Start now", admin_jobs_path) %>
+          <% else %>
+            <%= link_to("Strat now", jobs_path) %>
+          <% end %>
         </p>
     </a>
     </div>
@@ -37,8 +41,8 @@
       <h2 class="text-center">How WL Works for You</h2>
       <div class="row">
         <div class="col-sm-12 col-md-4 col-lg-4 how-col how-col-1">
-          <h3 class="text-center">Search millions of jobs</h3>
-          <p class="text-center">We've got more than 5 million of 'em—so you've got plenty of options. Plus, we'll send an alert when a good fit for you is posted.</p>
+          <h3 class="text-center">Search ten thousands of jobs</h3>
+          <p class="text-center">We've got more than 30 thousand of 'em—so you've got plenty of options. Plus, we'll send an alert when a good fit for you is posted.</p>
         </div>
         <div class="col-sm-12 col-md-4 col-lg-4 how-col how-col-2">
           <h3 class="text-center">Get discovered</h3>
