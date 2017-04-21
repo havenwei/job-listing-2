@@ -253,9 +253,11 @@ a.btn-danger:hover{
 
         a:link {
           color: white;
+          text-decoration:none;
         }		/* 未被访问的链接 */
         a:visited {
           color: white;
+          text-decoration:none;
         }	/* 已被访问的链接 */
         a:hover {
           color: #0077B5;
@@ -263,6 +265,7 @@ a.btn-danger:hover{
         }
         a:active {
           text-shadow: 1px 1px 1px black;
+          text-decoration:none;
         }
     }
 
