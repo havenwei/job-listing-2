@@ -8,8 +8,18 @@
       <% else %>
         <%= link_to("Has Applied", "#", class: "btn btn-sm btn-danger") %>
       <% end %>
+
+
     </div>
-    <p><%= link_to(job.title, job_path(job)) %></p>
+
+    <p>
+      <% if current_user && current_user.favorite?(job) %>
+        <%= link_to discollect_job_path(job), method: :post do %><i class="fa fa-bookmark" aria-hidden="true"></i><% end %>
+      <% else %>
+        <%= link_to collect_job_path(job), method: :post do %><i class="fa fa-bookmark-o" aria-hidden="true"></i><% end %>
+      <% end %>
+      <%= link_to(job.title, job_path(job)) %>
+    </p>
 
 
     <div class="row">

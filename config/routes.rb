@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :jobs do
+    member do
+      post :collect
+      post :discollect
+    end
     resources :resumes
   end
 
