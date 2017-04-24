@@ -26,4 +26,16 @@ class User < ApplicationRecord
   def disapplied!(job)
     applied_jobs.delete(job)
   end
+
+  def favorite?(job)
+    favorite_jobs.include?(job)
+  end
+
+  def collect!(job)
+    favorite_jobs << job
+  end
+
+  def discollect!(job)
+    favorite_jobs.delete(job)
+  end
 end
