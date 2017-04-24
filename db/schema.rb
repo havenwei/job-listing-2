@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419183717) do
+ActiveRecord::Schema.define(version: 20170424075804) do
 
   create_table "job_applieds", force: :cascade do |t|
+    t.integer  "job_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "job_favorites", force: :cascade do |t|
     t.integer  "job_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false

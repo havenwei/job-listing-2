@@ -3,6 +3,8 @@ class Job < ApplicationRecord
   belongs_to :user
   has_many :job_applieds, dependent: :destroy
   has_many :applicants, through: :job_applieds, source: :user
+  has_many :job_favorites
+  has_many :collectors, through: :job_favorites, source: :user
 
   validates :title, presence: true
   validates :wage_upper_bound, presence: true
