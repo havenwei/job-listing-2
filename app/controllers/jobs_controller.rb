@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :collect, :discollect]
+  before_action :validate_search_key, only: [:search]
   layout "user"
 
   def index
@@ -66,18 +67,34 @@ class JobsController < ApplicationController
     redirect_to :back
   end
 
-    def discollect
-      @job = Job.find(params[:id])
-      if current_user.favorite?(@job)
-        current_user.discollect!(@job)
-        flash[:alert] = "Collection is canceled"
-      else
-        flash[:alert] = "NO collection"
-      end
-      redirect_to :back
+  def discollect
+    @job = Job.find(params[:id])
+    if current_user.favorite?(@job)
+      current_user.discollect!(@job)
+      flash[:alert] = "Collection is canceled"
+    else
+      flash[:alert] = "NO collection"
     end
+    redirect_to :back
+  end
+
+  def search
+    if @query_string.present?
+      search_result = Job.published.ransack(@search_criteria).result(distinct: true)
+      @jobs = search_result.paginate(:page => params[:page], per_page: 10 )
+    end
+  end
 
   private
+
+  def validate_search_key
+     @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+     @search_criteria = search_criteria(@query_string)
+    end
+
+   def search_criteria(query_string)
+     { :title_or_description_or_contact_email_or_city_or_company_or_category => query_string }
+   end
 
   def job_params
     params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :city, :company, :category)

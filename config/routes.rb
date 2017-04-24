@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       post :discollect
     end
     resources :resumes
+    collection do
+      get :search
+    end
   end
 
   namespace :favorite do

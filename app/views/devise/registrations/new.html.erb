@@ -11,7 +11,7 @@
           <%= f.input :email, required: true, autofocus: true %>
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           <%= f.input :password_confirmation, required: true %>
-          <%= f.input :is_admin, :label => false, as: :radio_buttons, collection:  [['candidate', false], ['Employer', true]], required: true %>
+          <%= f.input :is_admin, :label => false, as: :radio_buttons, collection:  [['Candidate', false], ['Employer', true]], required: true %>
         </div>
 
         <div class="form-actions">
