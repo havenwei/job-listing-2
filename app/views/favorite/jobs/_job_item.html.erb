@@ -1,0 +1,51 @@
+<div id="big-form" class="well auth-box">
+
+<div class="row jobs-show">
+  <div class="col-md-12 col-lg-10 col-lg-offset-1">
+    <div class="pull-right">
+      <% if !current_user || !current_user.applied?(job) %>
+        <%= link_to("Fast Apply", new_job_resume_path(job), class: "btn btn-sm btn-default") %>
+      <% else %>
+        <%= link_to("Has Applied", "#", class: "btn btn-sm btn-danger") %>
+      <% end %>
+
+
+    </div>
+
+    <p>
+      <% if current_user && current_user.favorite?(job) %>
+        <%= link_to discollect_job_path(job), method: :post do %><i class="fa fa-bookmark" aria-hidden="true"></i><% end %>
+      <% else %>
+        <%= link_to collect_job_path(job), method: :post do %><i class="fa fa-bookmark-o" aria-hidden="true"></i><% end %>
+      <% end %>
+      <%= link_to(job.title, job_path(job)) %>
+    </p>
+
+
+    <div class="row">
+      <div class="col-md-6">
+        <span><i class="fa fa-credit-card" aria-hidden="true"></i> <%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %> </span>
+      </div>
+      <div class="col-md-6">
+        <span><i class="fa fa-briefcase" aria-hidden="true"></i> <%= job.category%></span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <span><i class="fa fa-building" aria-hidden="true"></i> <%= job.company%></span>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <span><i class="fa fa-map-marker" aria-hidden="true"></i> <%= job.city %></span>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= time_ago_in_words(job.created_at) %></span>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <span><i class="fa fa-envelope" aria-hidden="true"></i> <%= job.user.email %></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
