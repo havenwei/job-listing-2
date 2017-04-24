@@ -1,0 +1,67 @@
+<div class="col-md-12">
+  <div class="auth">
+    <% if current_user && current_user.admin? %>
+      <h1 class="text-center">Welcom to WORK.LIFE <span>Review published jobs</span> </h1>
+    <% else %>
+    <h1 class="text-center">Welcom to WORK.LIFE <span>Seek a good job!</span> </h1>
+    <% end %>
+    <form>
+
+      <div class="dropdown clearfix pull-right">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Filter
+              <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+              <li>
+                <%= link_to("Lower Salary", jobs_path(:order => "by_lower_bound")) %>
+              </li>
+              <li>
+                <%= link_to("Upper Salary", jobs_path(:order => "by_upper_bound")) %>
+              </li>
+              <li>
+                <%= link_to("Publish Time", jobs_path ) %>
+              </li>
+          </ul>
+      </div>
+
+      <div class="tab">
+      	<ul class="tabs">
+      		<li><a href="" >Form</a></li>
+      		<li><a href="" >Table</a></li>
+      	</ul>
+
+        <div class="tab_content">
+
+      		<div class="tabs_item">
+            <%= render partial: "job_item", collection: @jobs, as: :job %>
+		      </div> <!-- / tabs_item -->
+
+      		<div class="tabs_item">
+            <div class="container_table">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Salary</th>
+                    <th>Category</th>
+                    <th>Company</th>
+                    <th>City</th>
+                    <th>Posted</th>
+                  </tr>
+                </thead>
+                <%= render partial: "job_item_table", collection: @jobs, as: :job %>
+                <!-- <% @jobs.each do |job| %>
+
+                <% end %> -->
+              </table>
+            </div>
+      		</div> <!-- / tabs_item -->
+          <div class="text-center">
+            <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+          </div>
+      	</div> <!-- / tab_content -->
+      </div>
+    </form>
+  </div>
+</div>
