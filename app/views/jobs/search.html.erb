@@ -1,34 +1,55 @@
+<div class="col-md-12">
+  <div class="auth">
+<form>
+
 <div>
   <br>
-  <% if @query_string.blank? %>
+<% if @query_string.blank? %>
     <div class="search-info-title">
-      Sorry, The search content cannot be blank, please type some product into to search.
+      <h1 class="text-center">Sorry !<span>The search content cannot be blank, please type some product into to search.</span></h1>
     </div>
+
   <% elsif @jobs.blank? %>
-    <br>
-    <h2 class="search-info-title">搜索信息不能为空，请输入关键字搜索</h2>
+    <h1 class="text-center">no search results found</h1>
   <% else %>
-    <h2 class="search-info-title"> 有关"<%= @query_string %>"的工作信息 </h2>
-    <div class="tabs_item">
-      <div class="container_table">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Salary</th>
-              <th>Category</th>
-              <th>Company</th>
-              <th>City</th>
-              <th>Posted</th>
-            </tr>
-          </thead>
-          <%= render partial: "job_item_table", collection: @jobs, as: :job %>
-        </table>
-      </div>
+    <h1 class="text-center">Search results of "<%= @query_string %>"</h1>
+    <br>
+    <div class="search-result">
 
-    <div class="text-center">
-      <%= will_paginate(@jobs, renderer: BootstrapPagination::Rails) %>
-    </div>
-
+        <div class="container_table">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Salary</th>
+                <th>Category</th>
+                <th>Company</th>
+                <th>City</th>
+                <th>Posted</th>
+              </tr>
+            </thead>
+            <% @jobs.each do |job| %>
+            <!-- <tbody> -->
+              <tr>
+                <td>
+                  <%= link_to(render_highlight_content(job,@query_string), job_path(job)) %>
+                </td>
+                <td><%=job.wage_lower_bound%> ~ <%=job.wage_upper_bound%></span></td>
+                <td><%= job.category %></td>
+                <td><%= job.company %></td>
+                <td><%= job.city %></td>
+                <td><%= time_ago_in_words(job.created_at) %>ago</td>
+              </tr>
+            <!-- </tbody> -->
+            <% end %>
+          </table>
+        </div>
+        <div class="text-center">
+          <%= will_paginate(@jobs, renderer: BootstrapPagination::Rails) %>
+        </div>
   <% end %>
+</div>
+
+</form>
+</div>
 </div>

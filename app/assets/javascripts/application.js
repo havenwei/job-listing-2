@@ -18,6 +18,7 @@
 //= require bootstrap/modal
 //= require_tree .
 
+//------------table-----------------
 $(document).ready(function() {
 
 	(function ($) {
@@ -37,4 +38,15 @@ $(document).ready(function() {
 		} );
 	})(jQuery);
 
+});
+
+
+//-------------search----------------
+$("#inpt_search").on('focus', function () {
+	$(this).parent('label').addClass('active');
+});
+
+$("#inpt_search").on('blur', function () {
+	if($(this).val().length == 0)
+		$(this).parent('label').removeClass('active');
 });
